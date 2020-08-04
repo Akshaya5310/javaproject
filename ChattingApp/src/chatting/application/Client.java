@@ -10,9 +10,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.net.ServerSocket;
 import java.net.Socket;
 
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,24 +22,21 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
-public class Server extends JFrame implements ActionListener{
+public class Client extends JFrame implements ActionListener{
 	
-	static JPanel p1;  //used division
+	JPanel p1;  //used division
 	JTextField t1;
 	JButton b1;
 	static JTextArea a1;
 	
-	static JFrame f1 = new JFrame();
-	
 	//networking
-	static ServerSocket skt;
 	static Socket s;
 	static DataInputStream din;
 	static DataOutputStream dout;
 	
 	//cerate constructor
 	
-	Server(){
+	Client(){
 		
 		p1=new JPanel(); // create object
 		p1.setLayout(null);
@@ -71,7 +68,7 @@ public class Server extends JFrame implements ActionListener{
 		});
 		
 		//add dp image
-		ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("chatting/application/icons/1.png"));
+		ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("chatting/application/icons/2.png"));
 		Image i5 = i4.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT);
 		ImageIcon i6 = new ImageIcon(i5);
 		JLabel l2 = new JLabel(i6);
@@ -107,7 +104,7 @@ public class Server extends JFrame implements ActionListener{
 		
 		//add name
 		
-		JLabel l3 = new JLabel("Akshaya");  //add name
+		JLabel l3 = new JLabel("Ranjita");  //add name
 		l3.setBounds(110, 18, 100, 20);
 		l3.setFont(new Font("SAN_SAFIF", Font.BOLD, 18));  //set font size
 		l3.setForeground(Color.white);
@@ -153,7 +150,7 @@ public class Server extends JFrame implements ActionListener{
 		//swing default layout not require thats why set layout null.(3)
 		setLayout(null);
 		setSize(400,580);
-		setLocation(130,90);
+		setLocation(800,90);
 		setUndecorated(true); //hidden header line like minimize maximize and close.
 		setVisible(true);
 			
@@ -172,22 +169,21 @@ public class Server extends JFrame implements ActionListener{
 
 	public static void main(String[] args) {
 		
-		new Server().setVisible(true);
+		new Client().setVisible(true);
 		
-		String msginput = "";
 		try {
-			skt = new ServerSocket(6001);
-			s = skt.accept();
+			s = new Socket("127.0.0.1", 6001);
 			din = new DataInputStream(s.getInputStream());
 			dout = new DataOutputStream(s.getOutputStream());
+			
+			String msginput = " ";
 			msginput = din.readUTF();
 			a1.setText(a1.getText()+"\n"+msginput);
-			
-			skt.close();
+		
 			s.close();
 			
-			
-		}catch(Exception e){}
+		}catch(Exception e) {}
+		
 	}
 
 }
