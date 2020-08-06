@@ -48,7 +48,7 @@ public class Server implements ActionListener{
            }
        });
        
-       ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("chatting/application/icons/1.png"));
+       ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("chatting/application/icons/ja.png"));
        Image i5 = i4.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT);
        ImageIcon i6 = new ImageIcon(i5);
        JLabel l2 = new JLabel(i6);
@@ -77,7 +77,7 @@ public class Server implements ActionListener{
        p1.add(l7);
        
        
-       JLabel l3 = new JLabel("Gaitonde");
+       JLabel l3 = new JLabel("Akshaya");
        l3.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
        l3.setForeground(Color.WHITE);
        l3.setBounds(110, 15, 100, 18);
