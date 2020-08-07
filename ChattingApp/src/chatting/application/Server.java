@@ -77,7 +77,7 @@ public class Server implements ActionListener{
        p1.add(l7);
        
        
-       JLabel l3 = new JLabel("Akshaya");
+       JLabel l3 = new JLabel("Akshay");
        l3.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
        l3.setForeground(Color.WHITE);
        l3.setBounds(110, 15, 100, 18);
@@ -102,13 +102,13 @@ public class Server implements ActionListener{
        
        
        a1 = new JPanel();
-       a1.setBounds(5, 75, 440, 570);
+       a1.setBounds(5, 75, 440, 575);
        a1.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
        f1.add(a1);
        
        
        t1 = new JTextField();
-       t1.setBounds(5, 655, 310, 40);
+       t1.setBounds(5, 655, 310, 30);
        t1.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
        f1.add(t1);
        
@@ -131,7 +131,7 @@ public class Server implements ActionListener{
        });
        
        b1 = new JButton("Send");
-       b1.setBounds(320, 655, 123, 40);
+       b1.setBounds(320, 655, 123, 30);
        b1.setBackground(new Color(7, 94, 84));
        b1.setForeground(Color.WHITE);
        b1.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
